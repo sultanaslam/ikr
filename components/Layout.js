@@ -64,13 +64,11 @@ export default ({ children, title }) => (
       footer {
         padding: 1em;
       }
-    `}</style>
+    `}</style>*/}
     <style global jsx>{`
       body {
         margin: 0;
-        font-size: 110%;
-        background: #f0f0f0;
       }
-    `}</style> */}
+    `}</style>
   </div>
 );

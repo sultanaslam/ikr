@@ -18,10 +18,10 @@ export default class MyDocument extends Document {
             rel='stylesheet'
           />
           <link href='/static/css/all.css' rel='stylesheet' />
-          <link
+          {/* <link
             href='http://ilam-staging.herokuapp.com/static/css/main.eddb0238.chunk.css'
             rel='stylesheet'
-          />
+          /> */}
         </Head>
         <body>
           <Main />
