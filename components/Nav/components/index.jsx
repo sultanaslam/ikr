@@ -32,6 +32,9 @@ export class Navbar extends React.Component {
         <MobileMenu toggleDrawer={this.toggleDrawer} state={this.state.left} />
 
         <ul className='links'>
+          <li>
+            <i class='fas fa-home pr-5'></i>Home
+          </li>
           <Link href='/'>
             <li>
               <i className='fas fa-home pr-5' />
@@ -44,7 +47,7 @@ export class Navbar extends React.Component {
               BLOG
             </li>
           </Link>
-          <Item
+          {/*<Item
             link='/result'
             name='Results'
             icon='fas fa-graduation-cap'
@@ -85,7 +88,7 @@ export class Navbar extends React.Component {
             byClass={newsCategory.slice(0, 4)}
             byBoard={newsCategory.slice(4, 8)}
             isNews={true}
-          />
+          /> */}
         </ul>
         <ul className='responsive-sidebar'>
           <Button onClick={this.toggleDrawer('left', true)}>

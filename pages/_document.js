@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
             href='https://fonts.googleapis.com/css?family=Roboto'
             rel='stylesheet'
           />
+          <link href='/static/css/all.css' rel='stylesheet' />
           <link
             href='http://ilam-staging.herokuapp.com/static/css/main.eddb0238.chunk.css'
             rel='stylesheet'
@@ -31,6 +32,7 @@ export default class MyDocument extends Document {
             font-family: 'Roboto', sans-serif;
           }
         `}</style>
+        <script src='/static/js/all.js'></script>
       </html>
     );
   }
