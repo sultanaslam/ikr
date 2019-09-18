@@ -2,19 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
 
-import Item from './Item';
-import MobileMenu from './MobileMenu';
-import {
-  resultByClass,
-  resultByBoard,
-  datesheetByClass,
-  datesheetByBoard,
-  pastpapersByClass,
-  pastpapersByBoard,
-  jobIndustries,
-  jobCities,
-  newsCategory
-} from '../data';
+// import Item from './Item';
+// import MobileMenu from './MobileMenu';
+// import {
+//   resultByClass,
+//   resultByBoard,
+//   datesheetByClass,
+//   datesheetByBoard,
+//   pastpapersByClass,
+//   pastpapersByBoard,
+//   jobIndustries,
+//   jobCities,
+//   newsCategory
+// } from '../data';
 
 export class Navbar extends React.Component {
   state = {
@@ -29,72 +29,27 @@ export class Navbar extends React.Component {
   render() {
     return (
       <div className='navbar'>
-        <MobileMenu toggleDrawer={this.toggleDrawer} state={this.state.left} />
+        {/* <MobileMenu toggleDrawer={this.toggleDrawer} state={this.state.left} /> */}
 
         <ul className='links'>
-          <li className='link'>
-            <i class='fas fa-home pr-5'></i>Home
-          </li>
           <Link href='/'>
             <li className='link'>
               <i className='fas fa-home pr-5' />
               Home
             </li>
           </Link>
-          <Link href='/blog'>
+          <Link href='/news'>
             <li className='link'>
-              <i className='fas fa-home pr-5' />
-              BLOG
+              <i className='fas fa-globe pr-5' />
+              News
             </li>
           </Link>
-          <Item
-            link='/result'
-            name='Results'
-            icon='fas fa-graduation-cap'
-            imageClass='result-img'
-            byClass={resultByClass}
-            byBoard={resultByBoard}
-          />
-          <Item
-            link='/datesheet'
-            name='Date Sheet'
-            icon='fas fa-clipboard-list'
-            imageClass='datesheet-img'
-            byClass={datesheetByClass}
-            byBoard={datesheetByBoard}
-          />
-          <Item
-            link='/pastpapers'
-            name='Past Papers'
-            icon='fas fa-paper-plane'
-            imageClass='pastpaper-img'
-            byClass={pastpapersByClass}
-            byBoard={pastpapersByBoard}
-          />
-          <Item
-            link='/jobs'
-            name='Jobs'
-            icon='fas fa-briefcase'
-            imageClass='jobmenu-img'
-            byClass={jobIndustries}
-            byBoard={jobCities}
-            isJob={true}
-          />
-          <Item
-            link='/news'
-            name='News'
-            icon='fas fa-globe'
-            imageClass='newsmenu-img'
-            byClass={newsCategory.slice(0, 4)}
-            byBoard={newsCategory.slice(4, 8)}
-            isNews={true}
-          />
         </ul>
-        <ul className='responsive-sidebar'>
+        {/* <ul className='responsive-sidebar'>
           <Button onClick={this.toggleDrawer('left', true)}>
             <i className='fas fa-bars' />
           </Button>
-        </ul>
+        </ul> */}
         <style jsx>
           {`
             .navbar {
@@ -126,6 +81,7 @@ export class Navbar extends React.Component {
             .navbar ul.links {
               list-style-type: none;
               margin: 0;
+              padding: 0;
               display: flex;
             }
             .navbar ul.links .link {
@@ -140,6 +96,7 @@ export class Navbar extends React.Component {
             }
             .navbar ul.links li:hover {
               background-color: #1c0c75;
+              cursor: pointer;
             }
             .navbar ul.links .sub-nav-items {
               min-height: 250px;
@@ -242,8 +199,10 @@ export class Navbar extends React.Component {
               display: none;
             }
             @media screen and (max-width: 799px) {
-              .navbar ul.links {
+               {
+                /* .navbar ul.links {
                 display: none;
+              } */
               }
             }
             .navbar ul.responsive-sidebar {

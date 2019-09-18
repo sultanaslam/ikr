@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Router from 'next/router';
+import Router, { withRouter } from 'next/router';
 import NProgress from 'nprogress';
 
 import Nav from './Nav/components';
@@ -8,34 +8,30 @@ import Nav from './Nav/components';
 Router.onRouteChangeStart = url => {
   console.log(url);
   NProgress.start();
+  if (document.querySelector('body')) {
+    document.querySelector('body').id = 'loading';
+    document.querySelector('#__next').style.display = 'none';
+  }
 };
 
-Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeComplete = () => {
+  if (document.querySelector('body')) {
+    document.querySelector('body').id = '';
+    document.querySelector('#__next').style.display = 'block';
+  }
+  NProgress.done();
+};
 Router.onRouteChangeError = () => NProgress.done();
 
-export default ({ children, title }) => (
+const Layout = props => (
   <div className='root'>
     <Head>
       <title>Ilam Ki Roshni</title>
     </Head>
     <Nav />
-    <header>
-      <Link href='/'>
-        <a>Home</a>
-      </Link>
-      <Link href='/about'>
-        <a>About</a>
-      </Link>
-      <Link href='/hireme'>
-        <a>Hire Me</a>
-      </Link>
-      <Link href='/blog'>
-        <a>Blog</a>
-      </Link>
-    </header>
 
-    <h1>{title}</h1>
-    {children}
+    <h1>{props.title}</h1>
+    {props.children}
 
     <footer>&copy; {new Date().getFullYear()}</footer>
     {/* <style jsx>{`
@@ -69,6 +65,16 @@ export default ({ children, title }) => (
       body {
         margin: 0;
       }
+      #loading {
+        height: 100vh;
+        width: 100vw;
+        z-index: 1000;
+        background: url(https://i.pinimg.com/originals/78/e8/26/78e826ca1b9351214dfdd5e47f7e2024.gif);
+        background-position: center;
+        background-size: cover;
+      }
     `}</style>
   </div>
 );
+
+export default withRouter(Layout);
