@@ -6,7 +6,7 @@ const LatestNewsSmall = ({ latest }) => (
     <div className='news-container'>
       <div className='hot-news'>
         {latest
-          .filter((v, i) => i < 3)
+          .filter((v, i) => i < 4)
           .map((v, i) => (
             <div
               key={i + v._id}

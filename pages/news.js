@@ -2,6 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import LatestNewsSmall from '../components/News/LatestNewsSmall';
+import SideNews from '../components/News/SideNews';
 
 const PostLink = ({ slug, title }) => (
   <li>
@@ -12,9 +13,16 @@ const PostLink = ({ slug, title }) => (
 );
 
 const News = ({ data, data: { latest } }) => (
-  <Layout title='My Blog'>
+  <Layout title='News'>
     {console.log('PROPS: ', data)}
-    <LatestNewsSmall latest={latest} />
+    <div id='news'>
+      <div className='left-container'>
+        <LatestNewsSmall latest={latest} />
+      </div>
+      <div className='right-container'>
+        <SideNews latest={latest} />
+      </div>
+    </div>
     <ul>
       <PostLink slug='react-post' title='React Post' />
       <PostLink slug='angular-post' title='Angular Post' />
