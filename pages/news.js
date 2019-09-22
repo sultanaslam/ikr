@@ -4,14 +4,6 @@ import Layout from '../components/Layout';
 import LatestNewsSmall from '../components/News/LatestNewsSmall';
 import SideNews from '../components/News/SideNews';
 
-const PostLink = ({ slug, title }) => (
-  <li>
-    <Link href={`/post/${title}`}>
-      <a>{title}</a>
-    </Link>
-  </li>
-);
-
 const News = ({ data, data: { latest } }) => (
   <Layout title='News'>
     <div id='news'>
@@ -22,11 +14,6 @@ const News = ({ data, data: { latest } }) => (
         <SideNews latest={latest} />
       </div>
     </div>
-    <ul>
-      <PostLink slug='react-post' title='React Post' />
-      <PostLink slug='angular-post' title='Angular Post' />
-      <PostLink slug='vue-post' title='Vue Post' />
-    </ul>
   </Layout>
 );
 
