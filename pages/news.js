@@ -14,7 +14,6 @@ const PostLink = ({ slug, title }) => (
 
 const News = ({ data, data: { latest } }) => (
   <Layout title='News'>
-    {console.log('PROPS: ', data)}
     <div id='news'>
       <div className='left-container'>
         <LatestNewsSmall latest={latest} />

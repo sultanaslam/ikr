@@ -1,9 +1,10 @@
-import Link from 'next/link';
 import Head from 'next/head';
 import Router, { withRouter } from 'next/router';
 import NProgress from 'nprogress';
 
 import Nav from './Nav/components';
+import Footer from './Footer';
+import Scroller from './Scroller';
 
 Router.onRouteChangeStart = url => {
   console.log(url);
@@ -25,18 +26,24 @@ Router.onRouteChangeError = () => NProgress.done();
 
 const Layout = props => (
   <div className='root'>
+    <Scroller />
     <Head>
       <title>Ilam Ki Roshni</title>
     </Head>
     <Nav />
-
-    <h1>{props.title}</h1>
     {props.children}
 
-    <footer>&copy; {new Date().getFullYear()}</footer>
+    <footer>
+      <Footer />
+    </footer>
     <style global jsx>{`
       body {
         margin: 0;
+        background: #e2e2e2;
+      }
+      a,
+      .cursorPointer {
+        cursor: pointer;
       }
       #loading {
         height: 100vh;

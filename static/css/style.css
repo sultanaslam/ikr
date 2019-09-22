@@ -172,6 +172,25 @@
 }
 @media screen and (max-width: 990px) {
   .right-container {
+    display: none;
     flex-basis: 100%;
   }
+}
+
+/* DETAILS */
+
+.news-post {
+  background: #fff;
+  padding: 5px;
+}
+.news-post a {
+  color: blue;
+  text-decoration: underline;
+}
+.news-post h1,
+.news-post h2 {
+  color: #000;
+}
+.news-post img {
+  width: 100%;
 }

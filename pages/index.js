@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default () => (
   <Layout title='Home'>
     <p>
-      Welcome to the home page <i class='fas fa-home'></i>
+      Welcome to the home page <i className='fas fa-home'></i>
     </p>
     <Link as={`/demo/${123}`} href='/demo/[pid]'>
       <a>Test Demo</a>
