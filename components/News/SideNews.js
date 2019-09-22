@@ -9,13 +9,13 @@ const SideNews = ({ latest }) => (
         className='side-news-card'
         style={{ background: '#ffffffbf', marginBottom: 10 }}
       >
-        <Link href={`news-details/${v._id}-${v.heading.replace(/ /g, '-')}`}>
+        <Link href={`/news-details/${v._id}-${v.heading.replace(/ /g, '-')}`}>
           <Fragment>
             <div className='overlay' />
             <img src={v.image} alt={v.name} />
           </Fragment>
         </Link>
-        <Link href={`news-details/${v._id}-${v.heading.replace(/ /g, '-')}`}>
+        <Link href={`/news-details/${v._id}-${v.heading.replace(/ /g, '-')}`}>
           <h3 className='p-10' style={{ padding: '5px 10px' }}>
             {v.heading}
           </h3>
