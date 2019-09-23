@@ -23,17 +23,17 @@ const News = ({
         <ThreeNews
           data={education || []}
           heading='Education News'
-          link='news/5d62826098672e34b4edc7e7-education-news'
+          link='/news/5d62826098672e34b4edc7e7-education-news'
         />
         <ThreeNews
           data={sports || []}
           heading='Sports News'
-          link='news/5d62807d98672e34b4edc7e6-sports-news'
+          link='/news/5d62807d98672e34b4edc7e6-sports-news'
         />
         <ThreeNews
           data={entertainment || []}
           heading='Entertainment News'
-          link='news/5d627f1b98672e34b4edc7e5-entertainment-news'
+          link='/news/5d627f1b98672e34b4edc7e5-entertainment-news'
         />
       </div>
       <div className='right-container'>
