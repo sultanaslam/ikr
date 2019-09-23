@@ -26,7 +26,15 @@ export const TwoDivsNews = ({ data }) => (
               <Link
                 href={`/news-details/${v._id}-${v.heading.replace(/ /g, '-')}`}
               >
-                <img src={v.image} alt={v.name} />
+                <div
+                  className='img'
+                  style={{
+                    background: `url(${v.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                />
               </Link>
               <p className='p-10'>
                 {v.info.length < 100 ? v.info : v.info.slice(0, 95) + '...'}
@@ -91,21 +99,23 @@ export const TwoDivsNews = ({ data }) => (
         min-height: 45px;
         cursor: pointer;
       }
-      .international-news .hot-news .card img {
+      .international-news .hot-news .card .img {
         width: 100%;
-        height: 300px;
+        height: 370px;
         cursor: pointer;
       }
-      .international-news .hot-news .card img:hover {
+      .international-news .hot-news .card .img:hover {
         -webkit-filter: contrast(1.1);
         filter: contrast(1.1);
         -webkit-filter: brightness(1.2);
         filter: brightness(1.2);
       }
-      @media screen and (max-width: 768px) {
-        .international-news .hot-news .card img {
+       {
+        /* @media screen and (max-width: 768px) {
+        .international-news .hot-news .card .img {
           height: auto;
         }
+      } */
       }
       .grey-link {
         color: grey;

@@ -24,7 +24,15 @@ export const ThreeNews = ({ data, link, heading }) => (
               <Link
                 href={`/news-details/${v._id}-${v.heading.replace(/ /g, '-')}`}
               >
-                <img src={v.image} alt={v.name} />
+                <div
+                  className='img'
+                  style={{
+                    background: `url(${v.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                />
               </Link>
               <p className='p-10'>
                 {v.info.length < 100 ? v.info : v.info.slice(0, 95) + '...'}
